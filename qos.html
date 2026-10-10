@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Calidad de servicio (QoS) · AgroLogistics Global</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav id="nav"></nav>
+    <main>
+        <section>
+            <h2>Calidad de servicio (QoS)</h2>
+            <div class="grid">
+                <div class="card">
+                    <label>Latencia: <b id="o1"></b> ms<input type="range" id="s1" min="0" max="400" value="60"></label>
+                    <label>Jitter: <b id="o2"></b> ms<input type="range" id="s2" min="0" max="100" value="10"></label>
+                    <label>Pérdida: <b id="o3"></b> %<input type="range" id="s3" min="0" max="10" step=".1"
+                            value=".3"></label>
+                    <label>Llamadas simultáneas: <b id="o4"></b><input type="range" id="s4" min="1" max="100"
+                            value="20"></label>
+                </div>
+                <div class="card">
+                    <p>Calidad de la llamada:</p><span class="v" id="vd"></span>
+                    <p id="vt" style="margin-top:14px"></p>
+                </div>
+            </div>
+            <div class="wrap">
+                <table>
+                    <tr>
+                        <th>Parámetro</th>
+                        <th>Referencia para voz</th>
+                        <th>Si falla</th>
+                    </tr>
+                    <tr>
+                        <td>Latencia</td>
+                        <td>≤ 150 ms en un sentido</td>
+                        <td>Eco y pausas en la conversación</td>
+                    </tr>
+                    <tr>
+                        <td>Jitter</td>
+                        <td>&lt; 30 ms</td>
+                        <td>Voz entrecortada</td>
+                    </tr>
+                    <tr>
+                        <td>Pérdida</td>
+                        <td>&lt; 1 %</td>
+                        <td>Palabras que se pierden</td>
+                    </tr>
+                    <tr>
+                        <td>Throughput</td>
+                        <td>≈ 87 kbps por llamada (G.711)</td>
+                        <td>Llamadas degradadas o rechazadas</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="mut">Umbrales basados en la recomendación ITU-T G.114 (ITU-T, 2003) y práctica común.</p>
+        </section>
+    </main>
+    <footer>ACA · Actualización en Telecomunicaciones · CUN</footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

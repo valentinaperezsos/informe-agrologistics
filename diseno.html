@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Diseño de la solución · AgroLogistics Global</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav id="nav"></nav>
+    <main>
+        <section>
+            <h2>Diseño de la solución</h2>
+            <img class="ph" src="images/lorawan.jpg" alt="Gateway LoRaWAN en un cultivo" onerror="this.remove()">
+            <p>Pulsa cualquier componente de la topología para ver su función y por qué se eligió.</p>
+            <h3>¿Qué pasa si algo falla?</h3>
+            <div class="tabs" role="group" aria-label="Escenario Plan B">
+                <button class="b pbb" data-k="n">Operación normal</button>
+                <button class="b off pbb" data-k="l">Falla del enlace principal</button>
+                <button class="b off pbb" data-k="a">Falla de AWS</button>
+                <button class="b off pbb" data-k="z">Falla de Azure</button>
+            </div><div class="card" id="pbt" style="margin-bottom:10px"></div>
+            <svg id="dg" viewBox="0 0 780 390" role="img" aria-label="Topología de la arquitectura propuesta"></svg>
+            <div class="card" id="dinfo" style="margin-top:10px">Selecciona un componente del diagrama.</div>
+            <h3 style="margin-top:24px">Segmentación y servicios</h3>
+            <div class="wrap">
+                <table>
+                    <tr>
+                        <th>Segmento</th>
+                        <th>Uso</th>
+                        <th>Rango de ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>VLAN 10</td>
+                        <td>Administración</td>
+                        <td>10.0.10.0/24</td>
+                    </tr>
+                    <tr>
+                        <td>VLAN 20</td>
+                        <td>Voz (con prioridad QoS)</td>
+                        <td>10.0.20.0/24</td>
+                    </tr>
+                    <tr>
+                        <td>VLAN 30</td>
+                        <td>Datos corporativos</td>
+                        <td>10.0.30.0/24</td>
+                    </tr>
+                    <tr>
+                        <td>VLAN 40</td>
+                        <td>IoT y gateways</td>
+                        <td>10.0.40.0/24</td>
+                    </tr>
+                    <tr>
+                        <td>VLAN 50</td>
+                        <td>Gestión y monitoreo</td>
+                        <td>10.0.50.0/24</td>
+                    </tr>
+                    <tr>
+                        <td>VPC AWS / VNet Azure</td>
+                        <td>Servicios en la nube</td>
+                        <td>10.10.0.0/16 · 10.20.0.0/16</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="grid">
+                <div class="card"><b>DHCP</b><br>Uno por sede: si cae el enlace central, la sucursal sigue asignando
+                    direcciones.</div>
+                <div class="card"><b>DNS</b><br>Route 53 y Azure DNS para que los servicios de ambas nubes se encuentren
+                    por nombre.</div>
+                <div class="card"><b>Enrutamiento</b><br>Dinámico entre sedes y nube, con políticas definidas desde el
+                    controlador SDN.</div>
+                <div class="card"><b>Seguridad</b><br>Segmentación por VLAN y subred, firewall virtual, WAF e IAM/RBAC
+                    con mínimo privilegio.</div>
+            </div>
+            <h3 style="margin-top:24px">Decisión LPWAN para los sensores</h3>
+            <div class="wrap">
+                <table>
+                    <tr>
+                        <th>Tecnología</th>
+                        <th>Ventaja</th>
+                        <th>Limitación</th>
+                        <th>Papel</th>
+                    </tr>
+                    <tr>
+                        <td>LoRaWAN</td>
+                        <td>Abierto, hasta ~15 km rural, banda libre, AES-128</td>
+                        <td>Mucha densidad puede saturar</td>
+                        <td>Principal en cultivos lejanos</td>
+                    </tr>
+                    <tr>
+                        <td>NB-IoT</td>
+                        <td>Espectro licenciado, mejor QoS</td>
+                        <td>Depende de la cobertura del operador</td>
+                        <td>Complemento donde haya señal celular</td>
+                    </tr>
+                    <tr>
+                        <td>Sigfox</td>
+                        <td>Cobertura global</td>
+                        <td>Red propietaria, muy pocos datos</td>
+                        <td>Solo rastreo logístico</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="mut">Fuentes: Gupta (2024); Taruc &amp; De La Cruz (2024); Frankiewicz et al. (2020). Para voz,
+                una PBX virtual con UCaaS y SIP Trunking reemplaza la telefonía análoga (Robar, 2009; Andonova, 2009).
+            </p>
+        </section>
+    </main>
+    <footer>ACA · Actualización en Telecomunicaciones · CUN</footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

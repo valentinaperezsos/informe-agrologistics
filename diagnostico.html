@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Diagnóstico del problema · AgroLogistics Global</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav id="nav"></nav>
+    <main>
+        <section>
+            <h2>Diagnóstico del problema</h2>
+            <div class="wrap">
+                <table>
+                    <tr>
+                        <th>Falencia</th>
+                        <th>Riesgo operativo</th>
+                        <th>Impacto en el negocio</th>
+                    </tr>
+                    <tr>
+                        <td>Hardware rígido (routers y firewalls físicos)</td>
+                        <td>Cuellos de botella, cambios lentos</td>
+                        <td>Mantenimiento costoso, poca capacidad de crecer</td>
+                    </tr>
+                    <tr>
+                        <td>Sensores rurales que se desconectan</td>
+                        <td>Datos incompletos</td>
+                        <td>Riego, cosecha y logística con información parcial</td>
+                    </tr>
+                    <tr>
+                        <td>Telefonía análoga en sucursales</td>
+                        <td>Llamadas interurbanas de mala calidad</td>
+                        <td>Fallas de coordinación y tiempo perdido</td>
+                    </tr>
+                    <tr>
+                        <td>AWS y Azure aislados</td>
+                        <td>Sin alta disponibilidad unificada</td>
+                        <td>Una caída detiene procesos completos</td>
+                    </tr>
+                    <tr>
+                        <td>Sin diagnóstico en tiempo real ni políticas de acceso</td>
+                        <td>Se reacciona tarde; accesos indebidos</td>
+                        <td>Más horas de inactividad y exposición de datos</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Matriz de riesgos (pulsa un círculo)</h3>
+            <p class="mut">Probabilidad en el eje horizontal, impacto en el vertical. Valores supuestos por el equipo
+                (escala 1–5).</p>
+            <div id="mx"></div>
+            <div class="card" id="rinfo" style="margin-top:12px;max-width:520px">Selecciona un riesgo para ver su efecto
+                y su mitigación.</div>
+        </section>
+    </main>
+    <footer>ACA · Actualización en Telecomunicaciones · CUN</footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

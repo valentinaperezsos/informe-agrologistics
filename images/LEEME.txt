@@ -1,0 +1,1 @@
+Guarda aqui: portada.jpg, lorawan.jpg y centro-datos.jpg (opcionales). Si no estan, el sitio funciona igual.

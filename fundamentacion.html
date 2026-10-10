@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Fundamentación teórica · AgroLogistics Global</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav id="nav"></nav>
+    <main>
+        <section>
+            <h2>Fundamentación teórica</h2>
+            <div class="tabs" data-tabs>
+                <button class="b">Redes modernas</button><button class="b off">Virtualización y cloud</button><button
+                    class="b off">Monitoreo</button><button class="b off">QoS</button><button
+                    class="b off">Seguridad</button>
+            </div>
+            <div class="card pn on">
+                <p>Una red empresarial moderna es flexible, se gestiona de forma centralizada y convive con lo
+                    existente. SDN separa el plano de control (decide) del plano de datos (reenvía) y lo concentra en un
+                    controlador como OpenFlow o Cisco ACI. No obliga a reemplazar todo: permite migrar de forma
+                    progresiva (Carceller Cheza, 2013; Subramanian &amp; Voruganti, 2016; Fordham, 2017).</p>
+            </div>
+            <div class="card pn">
+                <p>NFV convierte funciones como firewall o router en software sobre servidores estándar (Wibowo &amp;
+                    Sangha, 2018). En la nube, VPC (AWS) y VNet (Azure) son redes privadas virtuales con subredes y
+                    rutas propias (Soni, 2018). Los contenedores empaquetan la aplicación con sus dependencias y pesan
+                    menos que una máquina virtual (Bullington-McGuire et al., 2020).</p>
+            </div>
+            <div class="card pn">
+                <p>Monitorear es supervisar de forma continua enlaces, equipos y servicios. Puede ser activo (paquetes
+                    de prueba) o pasivo (analizar el tráfico existente), y permite anticiparse a las fallas en lugar de
+                    reaccionar (Molina Robles &amp; Polo Ortega, 2015; Bermúdez Luque, 2023).</p>
+            </div>
+            <div class="card pn">
+                <p>La calidad de servicio se mide con latencia, jitter, pérdida de paquetes y throughput, para comprobar
+                    que el servicio cumple lo exigido (Robledo Sosa, 2002).</p>
+            </div>
+            <div class="card pn">
+                <p>En la nube la responsabilidad es compartida: el proveedor protege la infraestructura y el cliente
+                    protege sus datos, accesos y configuraciones. Se aplica mínimo privilegio con IAM (AWS) o RBAC
+                    (Azure) (Hernández Encinas et al., 2020; Guijarro Olivares et al., 2019).</p>
+            </div>
+        </section>
+    </main>
+    <footer>ACA · Actualización en Telecomunicaciones · CUN</footer>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
