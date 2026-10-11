@@ -686,3 +686,67 @@ nav a.on,
     color: #fff;
     opacity: 1
 }
+
+header p,
+.lead {
+    opacity: 1
+}
+
+nav a,
+nav button {
+    opacity: .92
+}
+
+.btn {
+    transition: background .2s, color .2s, border-color .2s
+}
+
+.btn:not(.alt):hover {
+    background: #1f5c3a;
+    border-color: #1f5c3a
+}
+
+.btn.alt:hover {
+    background: var(--ac);
+    border-color: var(--ac);
+    color: #fff
+}
+
+header .btn:hover,
+header .btn:focus-visible {
+    background: #fff;
+    border-color: #fff;
+    color: var(--ac)
+}
+
+header .btn.alt:hover,
+header .btn.alt:focus-visible {
+    background: var(--ac);
+    border-color: var(--ac);
+    color: #fff
+}
+
+header .btn,
+header .btn.alt {
+    background: transparent !important;
+    border: 1px solid var(--on) !important;
+    color: var(--on) !important
+}
+
+header .btn:hover,
+header .btn:focus-visible {
+    background: var(--ac) !important;
+    border-color: var(--ac) !important;
+    color: #fff !important
+}
+
+#hl {
+    list-style: disc;
+    padding-left: 1.4em
+}
+
+#hl li {
+    padding-left: 0;
+    text-indent: 0;
+    margin-bottom: .4em
+}
