@@ -645,3 +645,44 @@ ul.r li {
     padding-left: 2em;
     text-indent: -2em
 }
+
+:root {
+    --ac: #2f7d4f
+}
+
+h2 {
+    border-bottom: 3px solid var(--ac)
+}
+
+button.b:not(.off):not(.act-r):not(.act-g) {
+    background: var(--ac);
+    color: #fff
+}
+
+.btn:not(.alt),
+header .btn {
+    background: var(--ac);
+    border-color: var(--ac);
+    color: #fff
+}
+
+header .btn.alt {
+    background: transparent;
+    border-color: #fff;
+    color: #fff
+}
+
+a.card:hover {
+    border-color: var(--ac)
+}
+
+.num {
+    color: var(--ac)
+}
+
+nav a.on,
+#mn>li>a.on {
+    background: var(--ac);
+    color: #fff;
+    opacity: 1
+}
